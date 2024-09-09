@@ -1,6 +1,7 @@
 name: PR to main
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
