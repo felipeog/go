@@ -22,6 +22,7 @@ func TestWelcome(t *testing.T) {
 			want:        "Welcome to my party, Xuân Jing!",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.description, func(t *testing.T) {
 			if got := Welcome(tt.name); got != tt.want {
@@ -51,6 +52,7 @@ func TestHappyBirthday(t *testing.T) {
 			want:        "Happy birthday Xuân Jing! You are now 17 years old!",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.description, func(t *testing.T) {
 			if got := HappyBirthday(tt.name, tt.age); got != tt.want {
@@ -98,6 +100,7 @@ func TestAssignTable(t *testing.T) {
 			want:        "Welcome to my party, Paula!\nYou have been assigned to table 101. Your table is on the right, exactly 100.0 meters from here.\nYou will be sitting next to Chioma.",
 		},
 	}
+	
 	for _, tt := range tests {
 		t.Run(tt.description, func(t *testing.T) {
 			if got := AssignTable(tt.name, tt.tableNumber, tt.seatmate, tt.direction, tt.distance); got != tt.want {
