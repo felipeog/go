@@ -1,4 +1,4 @@
-package cars
+package cars_assemble
 
 // CalculateWorkingCarsPerHour calculates how many working cars are
 // produced by the assembly line every hour.

@@ -1,4 +1,4 @@
-package purchase
+package vehicle_purchase
 
 import (
 	"math"
