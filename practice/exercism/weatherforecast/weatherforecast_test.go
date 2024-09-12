@@ -1,4 +1,4 @@
-package weather_forecast
+package weatherforecast
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func TestComments(t *testing.T) {
-	filename := "weather_forecast.go"
+	filename := "weatherforecast.go"
 
 	fs := token.NewFileSet()
 	f, err := parser.ParseFile(fs, filename, nil, parser.ParseComments)

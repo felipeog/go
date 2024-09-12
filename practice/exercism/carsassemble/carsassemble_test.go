@@ -1,4 +1,4 @@
-package cars_assemble
+package carsassemble
 
 import (
 	"math"

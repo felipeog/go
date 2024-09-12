@@ -1,4 +1,4 @@
-package welcome_to_tech_palace
+package welcometotechpalace
 
 import "testing"
 

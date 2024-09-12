@@ -1,4 +1,4 @@
-package hello_world
+package helloworld
 
 // HelloWorld greets the world.
 func HelloWorld() string {

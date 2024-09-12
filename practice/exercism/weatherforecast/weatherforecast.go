@@ -1,5 +1,5 @@
-// Package weather_forecast provides weather forecast tools.
-package weather_forecast
+// Package weatherforecast provides weather forecast tools.
+package weatherforecast
 
 // CurrentCondition represents a certain condition.
 var CurrentCondition string

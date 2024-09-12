@@ -1,4 +1,4 @@
-package vehicle_purchase
+package vehiclepurchase
 
 import "fmt"
 

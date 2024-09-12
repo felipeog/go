@@ -1,4 +1,4 @@
-package annalyns_infiltration
+package annalynsinfiltration
 
 import "testing"
 

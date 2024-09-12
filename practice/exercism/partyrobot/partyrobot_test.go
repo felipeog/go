@@ -1,4 +1,4 @@
-package party_robot
+package partyrobot
 
 import (
 	"strings"
