@@ -1,6 +1,6 @@
 # mysqldatabase
 
-## Docker
+## [Docker](https://docs.docker.com/reference/cli/docker/)
 
 [Start container](https://docs.docker.com/reference/cli/docker/compose/up/)
 
@@ -34,7 +34,7 @@ docker exec -it db sh
 mysql --user=root --password=password
 ```
 
-## MySQL
+## [MySQL](https://dev.mysql.com/doc/refman/8.4/en/sql-statements.html)
 
 [List databases](https://dev.mysql.com/doc/refman/8.4/en/show-databases.html)
 
