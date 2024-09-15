@@ -9,43 +9,43 @@ import (
 
 type Middleware func(http.HandlerFunc) http.HandlerFunc
 
-func Logging() Middleware {
-	return func(f http.HandlerFunc) http.HandlerFunc {
+func LoggingMiddleware() Middleware {
+	return func(h http.HandlerFunc) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			start := time.Now()
 			defer func() { log.Println(r.URL.Path, time.Since(start)) }()
-			f(w, r)
+			h(w, r)
 		}
 	}
 }
 
-func Method(m string) Middleware {
-	return func(f http.HandlerFunc) http.HandlerFunc {
+func MethodMiddleware(m string) Middleware {
+	return func(h http.HandlerFunc) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			if r.Method != m {
 				http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 				return
 			}
 
-			f(w, r)
+			h(w, r)
 		}
 	}
 }
 
-func Chain(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
+func Chain(h http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
 	for _, m := range middlewares {
-		f = m(f)
+		h = m(h)
 	}
 
-	return f
+	return h
 }
 
-func Hello(w http.ResponseWriter, r *http.Request) {
+func HelloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "hello world")
 }
 
 func main() {
-	http.HandleFunc("/", Chain(Hello, Method("GET"), Logging()))
+	http.HandleFunc("/", Chain(HelloHandler, MethodMiddleware("GET"), LoggingMiddleware()))
 	http.ListenAndServe(":8080", nil)
 }
 
